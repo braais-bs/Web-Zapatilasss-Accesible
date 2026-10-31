@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapatillasss</title>
+    <link rel="stylesheet" href="AccesibleZapatillasss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<!-- Como el h1 se oculta ponemos id inicio a la parte superior del body de manera que el botón de volver arriba acabe llevando al mismo sitio -->
+<body id="inicio">
+    <!--BOTÓN DE ABRIR EL MENÚ-->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <!--MENÚ LATERAL-->
+    <aside class="menu-lateral">
+        <!--BOTÓN DE CERRAR EL MENÚ-->
+        <button type="button" class="menu-cerrar" aria-label="Cerrar menú"
+            onclick="document.getElementById('menu-toggle').checked = false;">←</button>
+        <div class="menu-contenido">
+            <h1 class="titulo-menu-lateral">Filtrar por:</h1>
+            <form method="POST" action="accesiblezapatillasss.html">
+                <details class="desplegable-menu-lateral">
+                    <summary>Color</summary>
+                    <ul>
+                        <li>
+                            <label for="color1">Rojo</label>
+                            <input type="checkbox" id="color1" name="colores1" value="Rojo">
+                        </li>
+                        <li>
+                            <label for="color2">Verde</label>
+                            <input type="checkbox" id="color2" name="colores2" value="Verde">
+                        </li>
+                        <li>
+                            <label for="color3">Azul</label>
+                            <input type="checkbox" id="color3" name="colores3" value="Azul">
+                        </li>
+                        <li>
+                            <label for="color4">Amarillo</label>
+                            <input type="checkbox" id="color4" name="colores4" value="Amarillo">
+                        </li>
+                        <li>
+                            <label for="color5">Morado</label>
+                            <input type="checkbox" id="color5" name="colores5" value="Morado">
+                        </li>
+                    </ul>
+                </details>
+                <details class="desplegable-menu-lateral">
+                    <summary>Talla</summary>
+                    <ul>
+                        <li>
+                            <label for="talla1">XS</label>
+                            <input type="checkbox" id="talla1" name="tallas1" value="XS">
+                        </li>
+                        <li>
+                            <label for="talla2">S</label>
+                            <input type="checkbox" id="talla2" name="tallas2" value="S">
+                        </li>
+                        <li>
+                            <label for="talla3">M</label>
+                            <input type="checkbox" id="talla3" name="tallas3" value="M">
+                        </li>
+                        <li>
+                            <label for="talla4">L</label>
+                            <input type="checkbox" id="talla4" name="tallas4" value="L">
+                        </li>
+                        <li>
+                            <label for="talla5">XL</label>
+                            <input type="checkbox" id="talla5" name="tallas5" value="XL">
+                        </li>
+                    </ul>
+                </details>
+                <details class="desplegable-menu-lateral">
+                    <summary>Precio</summary>
+                    <label for="precioFiltro" class="precio" style="display: block;">0$ - 500$</label>
+                    <input class="precio" type="range" id="precioFiltro" min="0" max="500" step="1" value="50">
+                </details>
+                <button type="submit" class="buscar">Buscar</button>
+            </form>
+        </div>
+    </aside>
+    <!--CABECERA-->
+    <header>
+        <!--NOMBRE DE LA WEB, ya no tiene id inicio ya que se oculta al deslizar y cuando se llega a ver el botón "volver arriba" no se puede hacer referencia a este h1-->
+        <h1>Zapatillasss</h1>
+        <!--MENÚ DE OPCIONES-->
+        <nav>
+            <label for="menu-toggle" class="menu-toggle-label" title="Abrir menú">☰</label>
+            <ul>
+                <li><a href="index.html"><img src="IMAGENES/boton-de-inicio.png" alt="Inicio WEB"
+                            title="Inicio WEB"></a></li>
+                <li><a href="informacion_tienda.html"><img src="IMAGENES/boton-de-informacion.png"
+                            alt="Información Tienda" title="Información Tienda"></a></li>
+                <li><a href="carrito.html"><img src="IMAGENES/carrito-de-compras.png" alt="Carrito" title="Carrito"></a>
+                </li>
+                <li><a href="opiniones_clientes.html"><img src="IMAGENES/opinion-del-cliente.png"
+                            alt="Opiniones Clientes" title="Opiniones Clientes"></a></li>
+                <li><a href="redes_sociales.html"><img src="IMAGENES/enlace.png" alt="Redes Sociales"
+                            title="Redes Sociales"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--SECCIÓN DE LOS PRODUCTOS-->
+    <main>
+        <div class="producto">
+            <img src="IMAGENES/Zapa1.jpg" alt="Zapatilla 1" title="Zapatilla 1"> <!--IMAGEN DEL PRODUCTO-->
+            <h2>Zapatilla 1</h2> <!--NOMBRE DEL PRODUCTO-->
+            <p>Precio: $10.00</p> <!--PRECIO DEL PRODUCTO-->
+            <!--DESCRIPCIÓN DEL PRODUCTO-->
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla azul celeste estilo basket con cordones blancos. Suela acolchada y ergonómica blanca.
+                    Tallas 36-43</p>
+            </details>
+            <!--VALORACIÓN DEL PRODUCTO-->
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <!--BOTÓN DE AGREGAR AL CARRITO-->
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto-oferta">
+            <img src="IMAGENES/oferta1.png" alt="Zapatilla 2" title="Zapatilla 2">
+            <h2>Zapatilla 2</h2>
+            <p>Precio:<span class="ofertaantes"> $10.00</span><span class="ofertadespues"> $8.00</span></p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p> Zapatilla azul estilo basket con cordones blancos. Suela acolchada y ergonómica amarilla. Tallas
+                    36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa3.jpg" alt="Zapatilla 3" title="Zapatilla 3">
+            <h2>Zapatilla 3</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla morado claro estilo basket con cordones blancos. Suela acolchada y ergonómica blanca y
+                    morada. Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa4.jpg" alt="Zapatilla 4" title="Zapatilla 4">
+            <h2>Zapatilla 4</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla morada baja con cordones blancos. Suela acolchada y ergonómica blanca y morada. Tallas
+                    36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa5.jpg" alt="Zapatilla 5" title="Zapatilla 5">
+            <h2>Zapatilla 5</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla naranja estilo basket con cordones naranjas. Suela acolchada y ergonómica blanca y naranja.
+                    Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa6.jpg" alt="Zapatilla 6" title="Zapatilla 6">
+            <h2>Zapatilla 6</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla naranja estilo basket con cordones naranjas. Suela acolchada y ergonómica de goma de color
+                    blanca y naranja con tacos. Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa7.jpg" alt="Zapatilla 7" title="Zapatilla 7">
+            <h2>Zapatilla 7</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla verde baja con cordones blancos. Suela acolchada y ergonómica de goma de color blanca y
+                    verde . Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto-oferta">
+            <img src="IMAGENES/oferta2.png" alt="Zapatilla 8" title="Zapatilla 8">
+            <h2>Zapatilla 8</h2>
+            <p>Precio:<span class="ofertaantes"> $10.00</span><span class="ofertadespues"> $8.00</span></p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla verde running con cordones verdes. Suela acolchada y ergonómica de goma de color blanca y
+                    verde con resaltos de agarre . Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa9.jpg" alt="Zapatilla 9" title="Zapatilla 9">
+            <h2>Zapatilla 9</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla de colores (Azul, amarillo y rosa) estilo basket con cordones blancos. Suela acolchada y
+                    ergonómica de goma de color blanca con resaltos de agarre . Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa10.jpg" alt="Zapatilla 10" title="Zapatilla 10">
+            <h2>Zapatilla 10</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla de colores (Azul celeste, amarillo y salmón) estilo basket con cordones blancos. Suela
+                    acolchada y ergonómica de goma de color blanca . Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa11.jpg" alt="Zapatilla 11" title="Zapatilla 11">
+            <h2>Zapatilla 11</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p>Zapatilla de colores (Azul, amarillo y rojo) running con cordones amarillos. Suela acolchada y
+                    ergonómica de goma de color amarillo. Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="IMAGENES/Zapa12.jpg" alt="Zapatilla 12" title="Zapatilla 12">
+            <h2>Zapatilla 12</h2>
+            <p>Precio: $10.00</p>
+            <details>
+                <summary>Ver Descripción</summary>
+                <p> Zapatilla de colores (Azul, amarillo y rojo degradado) running con cordones blancos. Suela acolchada
+                    y ergonómica de goma de color amarillo y blanco. Tallas 36-43.</p>
+            </details>
+            <div>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+                <span class="star">&#9734;</span>
+            </div>
+            <button type="button" class="agregar-carrito">Añadir al Carrito</button>
+        </div>
+    </main>
+    <!-- 
+    Al bajar más de 100px: añade la clase scrolled para compactar el menú (aqui es donde se oculta el título y deja solo la barra fija).
+    Al subir a menos de 30px: quita la clase y vuelve al diseño original.
+    -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (!header.classList.contains('scrolled') && window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else if (header.classList.contains('scrolled') && window.scrollY < 30) {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <!--PIE DE PÁGINA-->
+    <footer class="piepagina">
+        <!-- /** CAMBIO BOTÓN VOLVER ARRIBA: Se añade onclick con scrollTo({top: 0, behavior: 'smooth'}) para garantizar la vuelta arriba inmediata y fluida. **/ -->
+        <a href=#inicio><img src="IMAGENES/flecha-arriba.png" alt="Volver Arriba" title="Volver Arriba"></a>
+        <p>2026 Tienda zapatillasss</p>
+    </footer>
+</body>
+
+</html>

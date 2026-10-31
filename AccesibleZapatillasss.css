@@ -1,0 +1,223 @@
+/* ESTILO DE TODO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* TIPO DE LETRA DE TODA LA WEB */
+body {
+    font-family: Arial, sans-serif;
+}
+/* ESTILOS DE LA CABECERA Y PIE DE PÁGINA */
+header, footer {
+    background-color: #1fb6f7;
+    color: #000000;
+    padding: 10px 0;
+}
+/* El header es sticky desde el principio para evitar un cambio brusco al empeaueñecerse y fijarse */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+footer{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* ESTILO DEL TÍTULO DE LA WEB */
+h1 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    max-height: 120px;
+    opacity: 1;
+    transition: max-height 0.35s ease, opacity 0.25s ease, margin 0.35s ease;
+}
+header.scrolled h1 {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+}
+/* ESTILOS DEL MENÚ SUPERIOR */
+nav, h1, footer {
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+}
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+nav img, footer img {
+    width: 24px;
+    height: 24px;
+}
+/* ESTILOS MENÚ LATERAL */
+.menu-toggle {
+    display: none; 
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    z-index: 2;
+}
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    width: 250px;
+    background-color: #ffffff;
+    color: #000000;
+    z-index: 1001; /* El header tiene z index 100, por tanto el menu debe superponerse */
+    transition: left 1.5s;
+    overflow-y: auto;
+}
+.menu-toggle:checked + .menu-lateral {
+    left: 0;
+}
+.menu-toggle:checked + .menu-lateral .menu-toggle {
+    display: none;
+}
+/* cursor pointer y hoover*/
+.menu-toggle-label {
+    float: left;
+    margin-left: 1rem;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+.menu-toggle-label:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.menu-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.menu-toggle:checked + .menu-lateral .menu-cerrar {
+    display: block;
+}
+.menu-contenido {
+    margin-left: 1.5rem;
+    margin-top: 2rem;
+}
+.titulo-menu-lateral {
+    margin-bottom: 2rem;
+}
+.desplegable-menu-lateral {
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+/* se hacen los summary interactivos visualmente */
+.desplegable-menu-lateral summary {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.desplegable-menu-lateral summary:hover {
+    text-decoration: underline;
+}
+ul {
+    list-style-type: none;
+    margin-left: 2rem;
+}
+.precio {
+    margin-left: 2rem;
+}
+.buscar {
+    margin-left: 2rem;
+    padding: 10px 20px;
+}
+/* ESTILOS DE CADA PRODUCTO */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.producto, .producto-oferta {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    flex: 0 0 calc(33.33% - 40px);
+    max-width: calc(33.33% - 40px);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* pequeña elevación y sombra al pasar por encima de cada producto */
+.producto:hover, .producto-oferta:hover,
+.producto:focus-within, .producto-oferta:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes parpadeo {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: red;
+    }
+}
+.producto-oferta {
+    border: 2px solid transparent;
+    animation: parpadeo 2s infinite;
+}
+.producto img, .producto-oferta img {
+    max-width: 20vw;
+    height: auto;
+}
+/* ver descripcion con interaccion vidual */
+.producto summary, .producto-oferta summary {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: color 0.2s ease;
+}
+.producto summary:hover, .producto-oferta summary:hover {
+    text-decoration: underline;
+}
+.agregar-carrito, .buscar {
+    background-color: #000000;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.agregar-carrito{
+    margin-top: 10px;
+}
+.agregar-carrito:hover, .buscar:hover {
+    background-color: #2d3234;
+}
+.ofertaantes {
+    text-decoration: line-through;
+}
+.ofertadespues {
+    color: #d70606;
+}
+/*se eliminó que las estrellas se vieran con interacción*/
+.star {
+    font-size: 24px; /* Tamaño de las estrellas */
+    color: gold; /* Color de las estrellas */
+    cursor: default;
+}
+@media (max-width: 992px) {
+    .producto, .producto-oferta {
+        flex: 0 0 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+}
+@media (max-width: 768px) {
+    .producto, .producto-oferta {
+        flex: 0 0 calc(100% - 40px);
+        max-width: calc(100% - 40px);
+    }
+}
